@@ -14,6 +14,7 @@
 		88BDB65122F40B5F00DC5A2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BDB64F22F40B5F00DC5A2D /* LaunchScreen.storyboard */; };
 		88BDB65C22F40BB000DC5A2D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDB65B22F40BB000DC5A2D /* HomeVC.swift */; };
 		88BDB65F22F4178A00DC5A2D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDB65E22F4178A00DC5A2D /* Extensions.swift */; };
+		88BDB66222F42BB800DC5A2D /* MagnifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDB66122F42BB800DC5A2D /* MagnifyVC.swift */; };
 		B4DAA708E1960921ABDABDDB /* Pods_cimage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694A3B7A30635F147B52B38A /* Pods_cimage.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		88BDB65222F40B5F00DC5A2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88BDB65B22F40BB000DC5A2D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		88BDB65E22F4178A00DC5A2D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		88BDB66122F42BB800DC5A2D /* MagnifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnifyVC.swift; sourceTree = "<group>"; };
 		D3DCFED611C1EAEC7C21BC84 /* Pods-cimage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cimage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cimage/Pods-cimage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 		88BDB64522F40B5400DC5A2D /* cimage */ = {
 			isa = PBXGroup;
 			children = (
+				88BDB66022F42B6D00DC5A2D /* Magnify */,
 				88BDB65D22F4177900DC5A2D /* Utils */,
 				88BDB65A22F40B9500DC5A2D /* Controller */,
 				88BDB65922F40B9000DC5A2D /* View */,
@@ -116,6 +119,14 @@
 				88BDB65E22F4178A00DC5A2D /* Extensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		88BDB66022F42B6D00DC5A2D /* Magnify */ = {
+			isa = PBXGroup;
+			children = (
+				88BDB66122F42BB800DC5A2D /* MagnifyVC.swift */,
+			);
+			path = Magnify;
 			sourceTree = "<group>";
 		};
 		A4D853B2DBE8C147F7B953A6 /* Frameworks */ = {
@@ -247,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88BDB65C22F40BB000DC5A2D /* HomeVC.swift in Sources */,
+				88BDB66222F42BB800DC5A2D /* MagnifyVC.swift in Sources */,
 				88BDB64922F40B5400DC5A2D /* ViewController.swift in Sources */,
 				88BDB64722F40B5400DC5A2D /* AppDelegate.swift in Sources */,
 				88BDB65F22F4178A00DC5A2D /* Extensions.swift in Sources */,

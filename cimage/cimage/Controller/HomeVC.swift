@@ -13,6 +13,8 @@ class HomeVC: UIViewController {
     
     // MARK: - Properties
     
+    private var magnifyView: MagnifyVC?
+    
     let img = UIImage(named: "waifu")
     
     let debugLbl: UILabel = {
@@ -23,11 +25,13 @@ class HomeVC: UIViewController {
     }()
     
     lazy var imageView: ZImageCropperView = {
+        
         let image = ZImageCropperView()
         image.isUserInteractionEnabled = true
         image.strokeColor = .red
         image.image = self.img
         image.contentMode = .scaleAspectFill
+        
         return image
         
     }()
@@ -60,12 +64,20 @@ class HomeVC: UIViewController {
         return btn
     }()
     
+    let testView: UIView = {
+        let testView = UIView()
+        testView.backgroundColor = .red
+        testView.isUserInteractionEnabled = true
+        return testView
+        
+    }()
+    
     // MARK: - Init
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        view.isUserInteractionEnabled = true
+        view.isUserInteractionEnabled = true
 
         setupViewComponents()
     }
@@ -88,6 +100,32 @@ class HomeVC: UIViewController {
         view.addSubview(resetBtn)
         resetBtn.anchor(top: cropBtn.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 12, paddingLeft: 50, paddingBottom: 0, paddingRight: 50, width: 0, height: 50)
         
+        view.addSubview(testView)
+        testView.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 25, paddingRight: 01, width: 0, height: 100)
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let point = touches.first?.location(in: view)
+        if magnifyView == nil {
+            magnifyView = MagnifyVC.init(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+            magnifyView?.viewToMagnify = view
+            magnifyView?.setTouchPoint(pt: point!)
+            self.view.addSubview(magnifyView!)
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if magnifyView != nil {
+            magnifyView?.removeFromSuperview()
+            magnifyView = nil
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let point = touches.first?.location(in: view)
+        magnifyView?.setTouchPoint(pt: point!)
+        magnifyView?.setNeedsDisplay()
     }
     
     
@@ -104,3 +142,4 @@ class HomeVC: UIViewController {
 
 
 }
+
