@@ -13,9 +13,13 @@
 		88BDB64E22F40B5F00DC5A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BDB64D22F40B5F00DC5A2D /* Assets.xcassets */; };
 		88BDB65122F40B5F00DC5A2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BDB64F22F40B5F00DC5A2D /* LaunchScreen.storyboard */; };
 		88BDB65C22F40BB000DC5A2D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDB65B22F40BB000DC5A2D /* HomeVC.swift */; };
+		88BDB65F22F4178A00DC5A2D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDB65E22F4178A00DC5A2D /* Extensions.swift */; };
+		B4DAA708E1960921ABDABDDB /* Pods_cimage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694A3B7A30635F147B52B38A /* Pods_cimage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		694A3B7A30635F147B52B38A /* Pods_cimage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cimage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B2AEDE3E0CED6E057BCE260 /* Pods-cimage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cimage.release.xcconfig"; path = "Pods/Target Support Files/Pods-cimage/Pods-cimage.release.xcconfig"; sourceTree = "<group>"; };
 		88BDB64322F40B5400DC5A2D /* cimage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cimage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88BDB64622F40B5400DC5A2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88BDB64822F40B5400DC5A2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		88BDB65022F40B5F00DC5A2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88BDB65222F40B5F00DC5A2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88BDB65B22F40BB000DC5A2D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		88BDB65E22F4178A00DC5A2D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D3DCFED611C1EAEC7C21BC84 /* Pods-cimage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cimage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cimage/Pods-cimage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4DAA708E1960921ABDABDDB /* Pods_cimage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		723DF818708E7B6C94E8F358 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3DCFED611C1EAEC7C21BC84 /* Pods-cimage.debug.xcconfig */,
+				6B2AEDE3E0CED6E057BCE260 /* Pods-cimage.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		88BDB63A22F40B5400DC5A2D = {
 			isa = PBXGroup;
 			children = (
 				88BDB64522F40B5400DC5A2D /* cimage */,
 				88BDB64422F40B5400DC5A2D /* Products */,
+				723DF818708E7B6C94E8F358 /* Pods */,
+				A4D853B2DBE8C147F7B953A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +74,7 @@
 		88BDB64522F40B5400DC5A2D /* cimage */ = {
 			isa = PBXGroup;
 			children = (
+				88BDB65D22F4177900DC5A2D /* Utils */,
 				88BDB65A22F40B9500DC5A2D /* Controller */,
 				88BDB65922F40B9000DC5A2D /* View */,
 				88BDB65822F40B8900DC5A2D /* Model */,
@@ -91,6 +110,22 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		88BDB65D22F4177900DC5A2D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				88BDB65E22F4178A00DC5A2D /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A4D853B2DBE8C147F7B953A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				694A3B7A30635F147B52B38A /* Pods_cimage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88BDB65522F40B5F00DC5A2D /* Build configuration list for PBXNativeTarget "cimage" */;
 			buildPhases = (
+				4FFB13B01F79F30EEFD98234 /* [CP] Check Pods Manifest.lock */,
 				88BDB63F22F40B5400DC5A2D /* Sources */,
 				88BDB64022F40B5400DC5A2D /* Frameworks */,
 				88BDB64122F40B5400DC5A2D /* Resources */,
+				F2A857CA045CB27BD35B7F11 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,6 +194,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4FFB13B01F79F30EEFD98234 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cimage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2A857CA045CB27BD35B7F11 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-cimage/Pods-cimage-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ZImageCropper/ZImageCropper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZImageCropper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cimage/Pods-cimage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		88BDB63F22F40B5400DC5A2D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -165,6 +249,7 @@
 				88BDB65C22F40BB000DC5A2D /* HomeVC.swift in Sources */,
 				88BDB64922F40B5400DC5A2D /* ViewController.swift in Sources */,
 				88BDB64722F40B5400DC5A2D /* AppDelegate.swift in Sources */,
+				88BDB65F22F4178A00DC5A2D /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +393,7 @@
 		};
 		88BDB65622F40B5F00DC5A2D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3DCFED611C1EAEC7C21BC84 /* Pods-cimage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -327,6 +413,7 @@
 		};
 		88BDB65722F40B5F00DC5A2D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B2AEDE3E0CED6E057BCE260 /* Pods-cimage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

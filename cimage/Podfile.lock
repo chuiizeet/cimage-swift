@@ -1,0 +1,16 @@
+PODS:
+  - ZImageCropper (0.1.0)
+
+DEPENDENCIES:
+  - ZImageCropper
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ZImageCropper
+
+SPEC CHECKSUMS:
+  ZImageCropper: 1a5518eea94f1ce903bbfebc860bfb023d27fc62
+
+PODFILE CHECKSUM: edf614fdc74ee5efe76efd0db20149265e48d6d9
+
+COCOAPODS: 1.5.3

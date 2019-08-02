@@ -1,0 +1,6 @@
+framework module Pods_cimage {
+  umbrella header "Pods-cimage-umbrella.h"
+
+  export *
+  module * { export * }
+}
