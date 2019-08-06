@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88ACC17322F95CE300920A66 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ACC17222F95CE300920A66 /* EditVC.swift */; };
 		88BDB64722F40B5400DC5A2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDB64622F40B5400DC5A2D /* AppDelegate.swift */; };
 		88BDB64922F40B5400DC5A2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDB64822F40B5400DC5A2D /* ViewController.swift */; };
 		88BDB64C22F40B5500DC5A2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BDB64A22F40B5500DC5A2D /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		694A3B7A30635F147B52B38A /* Pods_cimage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cimage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B2AEDE3E0CED6E057BCE260 /* Pods-cimage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cimage.release.xcconfig"; path = "Pods/Target Support Files/Pods-cimage/Pods-cimage.release.xcconfig"; sourceTree = "<group>"; };
+		88ACC17222F95CE300920A66 /* EditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		88BDB64322F40B5400DC5A2D /* cimage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cimage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88BDB64622F40B5400DC5A2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88BDB64822F40B5400DC5A2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				88BDB65B22F40BB000DC5A2D /* HomeVC.swift */,
+				88ACC17222F95CE300920A66 /* EditVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				88BDB66222F42BB800DC5A2D /* MagnifyVC.swift in Sources */,
 				88BDB64922F40B5400DC5A2D /* ViewController.swift in Sources */,
 				88BDB64722F40B5400DC5A2D /* AppDelegate.swift in Sources */,
+				88ACC17322F95CE300920A66 /* EditVC.swift in Sources */,
 				88BDB65F22F4178A00DC5A2D /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

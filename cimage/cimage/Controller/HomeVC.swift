@@ -133,6 +133,11 @@ class HomeVC: UIViewController {
     
     @objc func handleCropBtnPressed() {
         imageView.image = imageView.cropImage()
+        
+        let edit = EditVC()
+        edit.cropImage = imageView.cropImage()
+        self.present(edit, animated: true, completion: nil)
+        
     }
     
     @objc func handleResetBtnPressed() {
