@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditVC: UIViewController {
+class EditVC: UIViewController, UIDropInteractionDelegate {
     
     // MARK: - Properties
     
@@ -17,6 +17,11 @@ class EditVC: UIViewController {
     lazy var editView: UIView = {
         let editView = UIView()
         editView.backgroundColor = .black
+        if #available(iOS 11.0, *) {
+            editView.addInteraction(UIDropInteraction(delegate: self))
+        } else {
+            print("Feelsbad")
+        }
         
         let cropView = UIImageView()
         cropView.clipsToBounds = true
@@ -26,6 +31,14 @@ class EditVC: UIViewController {
         cropView.center(inView: editView)
         
         return editView
+    }()
+    
+    let imageToDrag: UIImageView = {
+        let imgView = UIImageView()
+        imgView.clipsToBounds = true
+        imgView.contentMode = .scaleToFill
+        imgView.image = UIImage(named: "nice")
+        return imgView
     }()
     
     // MARK: - Init
@@ -44,6 +57,11 @@ class EditVC: UIViewController {
         
         view.addSubview(editView)
         editView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: view.frame.height / 2)
+        
+        view.addSubview(imageToDrag)
+        imageToDrag.anchor(top: editView.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 50, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 64, height: 64)
+        imageToDrag.centerX(inView: view)
+        
     }
 
 }
