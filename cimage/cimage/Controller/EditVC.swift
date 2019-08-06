@@ -8,21 +8,18 @@
 
 import UIKit
 
-class EditVC: UIViewController, UIDropInteractionDelegate {
+class EditVC: UIViewController {
     
     // MARK: - Properties
     
     var cropImage: UIImage?
     
+    var panGesture  = UIPanGestureRecognizer()
+    
     lazy var editView: UIView = {
         let editView = UIView()
         editView.backgroundColor = .black
-        if #available(iOS 11.0, *) {
-            editView.addInteraction(UIDropInteraction(delegate: self))
-        } else {
-            print("Feelsbad")
-        }
-        
+
         let cropView = UIImageView()
         cropView.clipsToBounds = true
         cropView.image = self.cropImage!
@@ -58,10 +55,36 @@ class EditVC: UIViewController, UIDropInteractionDelegate {
         view.addSubview(editView)
         editView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: view.frame.height / 2)
         
+        
         view.addSubview(imageToDrag)
+        
+        panGesture = UIPanGestureRecognizer(target: self, action: #selector(dragImg))
+        imageToDrag.isUserInteractionEnabled = true
+        imageToDrag.addGestureRecognizer(panGesture)
         imageToDrag.anchor(top: editView.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 50, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 64, height: 64)
         imageToDrag.centerX(inView: view)
         
     }
-
+    
+    func savePng() {
+        
+    }
+    
+    
+    // MARK: - Selectors
+    
+    @objc func dragImg(_ sender:UIPanGestureRecognizer){
+        let translation = sender.translation(in: self.editView)
+        imageToDrag.center = CGPoint(x: imageToDrag.center.x + translation.x, y: imageToDrag.center.y + translation.y)
+        sender.setTranslation(CGPoint.zero, in: self.editView)
+    }
+    
+    //Pinch Gesture for zoom in and zoom out
+    @IBAction func scaleImg(_ sender: UIPinchGestureRecognizer) {
+        imageToDrag.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
+    }
+    
+    
+    
+    
 }
