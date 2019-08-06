@@ -38,6 +38,20 @@ class EditVC: UIViewController {
         return imgView
     }()
     
+    let saveImgBtn: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setTitle("PngRepresentation - Test", for: .normal)
+        btn.setTitleColor(.black, for: .normal)
+        btn.backgroundColor = .white
+        btn.layer.borderWidth = 1
+        btn.layer.borderColor = UIColor.black.cgColor
+        btn.layer.cornerRadius = 25
+        
+        btn.addTarget(self, action: #selector(handleSaveBtnPressed), for: .touchUpInside)
+        
+        return btn
+    }()
+    
     // MARK: - Init
 
     override func viewDidLoad() {
@@ -64,9 +78,8 @@ class EditVC: UIViewController {
         imageToDrag.anchor(top: editView.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 50, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 64, height: 64)
         imageToDrag.centerX(inView: view)
         
-    }
-    
-    func savePng() {
+        view.addSubview(saveImgBtn)
+        saveImgBtn.anchor(top: imageToDrag.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 50, paddingLeft: 50, paddingBottom: 0, paddingRight: 50, width: 0, height: 50)
         
     }
     
@@ -85,6 +98,12 @@ class EditVC: UIViewController {
     }
     
     
-    
+    @objc func handleSaveBtnPressed() {
+        self.editView.backgroundColor = .clear
+        let image = UIImage(view: self.editView)
+        
+        print("Success")
+        
+    }
     
 }
